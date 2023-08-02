@@ -1,0 +1,16 @@
+Begin
+	Input   diem toan, diem ly, diem hoa
+	A = (diemtoan + diemly + diemhoa) / 3
+	Display “A”
+End
+
+
+
+Begin
+	Input   diem toan, diem ly, diem hoa
+	A = (diemtoan + diemly + diemhoa) / 3
+	Display “A”
+End
+
+
+
