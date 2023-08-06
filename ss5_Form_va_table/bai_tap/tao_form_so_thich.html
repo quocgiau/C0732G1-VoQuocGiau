@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form don gian</title>
+</head>
+<style>
+    form{
+            border: 15px solid aqua;
+            width: 19%;
+    }
+    tr,td{
+            color: dodgerblue;
+    }
+    table{
+            Width: 40%;
+    }
+</style>
+<body>
+<form action="" method="post">
+    <table>
+        <caption>
+            <h2 style="background-color: coral ; color: azure";  > SỞ THÍCH CỦA BẠN</h2>
+        </caption>
+        <tr>
+            <td><label for="yourname">Họ và tên:</label></td>
+            <td><input type="text" id="name" name="name" style="width: 280px" ></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="email" id="email" name="email" ></td>
+        </tr>
+        <tr>
+            <td><label>Sở thích:</label></td>
+            <td style="color: darkorange">
+                <input type="checkbox" name="hobbly">Thể thao
+                <input type="checkbox" name="hobbly">Âm nhạc
+                <input type="checkbox" name="hobbly">Đọc sách
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="color: darkorange">
+                <input type="checkbox" name="hobbly">Lướt web
+                <input type="checkbox" name="hobbly">Chơi game
+                <input type="checkbox" name="hobbly">Điện Ảnh
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="color: darkorange"><input type="checkbox" name="hobbly">Du lịch</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Gửi thông tin" />
+                <input type="reset" value="Nhập lại" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
