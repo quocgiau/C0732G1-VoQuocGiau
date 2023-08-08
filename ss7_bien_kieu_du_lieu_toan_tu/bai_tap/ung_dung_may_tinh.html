@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>may_tinh</title>
+</head>
+<body>
+<input type="text" id="doom">
+<input type="text" id="arena">
+<br>
+<br>
+<button id="button1" onclick="clickbutton1()">Cộng ( + )</button>
+<button id="button2" onclick="clickbutton2()">Trừ ( - )</button>
+<button id="button3" onclick="clickbutton3()">Nhân ( * )</button>
+<button id="button4" onclick="clickbutton4()">Chia ( / )</button>
+<br>
+<br>
+<div id="display"></div>
+<script>
+    function clickbutton1(){
+        let form = +document.getElementById("doom").value;
+        let too = +document.getElementById("arena").value;
+        let resule;
+        resule = form + too;
+        document.getElementById("display").innerHTML = "Result Division:" + resule;
+    }
+    function clickbutton2(){
+        let form = document.getElementById("doom").value;
+        let too = document.getElementById("arena").value;
+        let resule;
+        resule = form - too;
+        document.getElementById("display").innerHTML = "Result Division:" + resule;
+    }
+    function clickbutton3(){
+        let form = document.getElementById("doom").value;
+        let too = document.getElementById("arena").value;
+        let resule;
+        resule = form * too;
+        document.getElementById("display").innerHTML = "Result Division:" + resule;
+    }
+    function clickbutton4(){
+        let form = document.getElementById("doom").value;
+        let too = document.getElementById("arena").value;
+        let resule;
+        resule = form / too;
+        document.getElementById("display").innerHTML = "Result Division:" + resule;
+    }
+</script>
+</body>
+</html>

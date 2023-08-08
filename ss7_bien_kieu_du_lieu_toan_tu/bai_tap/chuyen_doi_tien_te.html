@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen_doi_tien_te</title>
+</head>
+<body>
+<form>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <th><input type="text" name="tien" id="Nhaptien" placeholder="Nhập ở đây" size="20"></th>
+        <th><select id="bien1">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select></th>
+        <th><select id="bien2">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+        </select></th>
+        <th><button type="button" onclick="ClickButton() ">Convert</button></th>
+    </tr>
+    <tr><th></th></tr>
+    <tr><th></th></tr>
+    <tr>
+        <td id="root"></td>
+    </tr>
+</table>
+<script>
+    function ClickButton() {
+        let bien1 = document.getElementById("bien1").value;
+        let bien2 = document.getElementById("bien2").value;
+        let nhap = document.getElementById("Nhaptien").value;
+        let resutl;
+        if (bien1 === "VND" && bien2 === "USD"){
+            resutl = nhap / 23000;
+        }else if (bien1 === "USD" && bien2 === "VND"){
+            resutl = nhap * 23000;
+        }else {
+            resutl = nhap;
+        }
+        document.getElementById("root").innerText = "Result:" + resutl ;
+    }
+</script>
+</form>
+</body>
+</html>
