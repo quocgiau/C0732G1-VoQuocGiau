@@ -33,13 +33,13 @@
 </table>
 <script>
     function ClickButton() {
-        let bien1 = document.getElementById("bien1").value;
-        let bien2 = document.getElementById("bien2").value;
+        let front = document.getElementById("bien1").value;
+        let behind = document.getElementById("bien2").value;
         let nhap = document.getElementById("Nhaptien").value;
         let resutl;
-        if (bien1 === "VND" && bien2 === "USD"){
+        if (front === "VND" && behind === "USD"){
             resutl = nhap / 23000;
-        }else if (bien1 === "USD" && bien2 === "VND"){
+        }else if (front === "USD" && behind === "VND"){
             resutl = nhap * 23000;
         }else {
             resutl = nhap;

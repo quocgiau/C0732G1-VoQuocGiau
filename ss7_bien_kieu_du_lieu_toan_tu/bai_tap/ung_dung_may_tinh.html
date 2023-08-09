@@ -5,46 +5,47 @@
     <title>may_tinh</title>
 </head>
 <body>
-<input type="text" id="doom">
-<input type="text" id="arena">
+<input type="text" id="numberone">
+<input type="text" id="numbertwo">
 <br>
 <br>
-<button id="button1" onclick="clickbutton1()">Cộng ( + )</button>
-<button id="button2" onclick="clickbutton2()">Trừ ( - )</button>
-<button id="button3" onclick="clickbutton3()">Nhân ( * )</button>
-<button id="button4" onclick="clickbutton4()">Chia ( / )</button>
+<button id="button1" onclick="clickbuttoncong()">Cộng ( + )</button>
+<button id="button2" onclick="clickbuttontru()">Trừ ( - )</button>
+<button id="button3" onclick="clickbuttonnhan()">Nhân ( * )</button>
+<button id="button4" onclick="clickbuttonchia()">Chia ( / )</button>
 <br>
 <br>
 <div id="display"></div>
 <script>
-    function clickbutton1(){
-        let form = +document.getElementById("doom").value;
-        let too = +document.getElementById("arena").value;
+    function clickbuttoncong(){
+        let form = +document.getElementById("numberone").value;
+        let too = +document.getElementById("numbertwo").value;
         let resule;
         resule = form + too;
         document.getElementById("display").innerHTML = "Result Division:" + resule;
     }
-    function clickbutton2(){
-        let form = document.getElementById("doom").value;
-        let too = document.getElementById("arena").value;
+    function clickbuttontru(){
+        let form = document.getElementById("numberone").value;
+        let too = document.getElementById("numbertwo").value;
         let resule;
         resule = form - too;
         document.getElementById("display").innerHTML = "Result Division:" + resule;
     }
-    function clickbutton3(){
-        let form = document.getElementById("doom").value;
-        let too = document.getElementById("arena").value;
+    function clickbuttonnhan(){
+        let form = document.getElementById("numberone").value;
+        let too = document.getElementById("numbertwo").value;
         let resule;
         resule = form * too;
         document.getElementById("display").innerHTML = "Result Division:" + resule;
     }
-    function clickbutton4(){
-        let form = document.getElementById("doom").value;
-        let too = document.getElementById("arena").value;
+    function clickbuttonchia(){
+        let form = document.getElementById("numberone").value;
+        let too = document.getElementById("numbertwo").value;
         let resule;
         resule = form / too;
         document.getElementById("display").innerHTML = "Result Division:" + resule;
     }
+
 </script>
 </body>
 </html>
