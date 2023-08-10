@@ -6,25 +6,28 @@
 </head>
 <body>
 <h2>Tính Chỉ Số Cân Nặng</h2>
-<input type="number" placeholder="Input Ur Weight" id="weight"> -
-<input type="number" placeholder="Input ur height" id="height">
-<button type="button" onclick="calcbmi()">Calc</button><br>
+<input type="number" placeholder="Nhập cân nặng" id="weight"> <br><br>
+<input type="number" placeholder="Nhập chiều cao" id="height"> <br>
 <br>
-<p id="result">Kết quả</p>
+<button type="button" onclick="clickButton()">Kiểm tra</button><br>
+<br>
+<p id="result"></p>
 <script>
-    function calcbmi(){
+    function clickButton(){
         let weight = parseInt(document.getElementById('weight').value)
         let height = parseInt(document.getElementById('height').value)
-        let result = weight / (Math.pow(height,2))
+        let result = "";
+        result = weight / (Math.pow(height,2))
         if(result < 18.5){
-            document.getElementById('result').innerHTML = "Ur BMI is " + result + "Ur body is Underweight";
+            document.getElementById('result').innerHTML = "Chỉ số BMI là: " + result + " Bạn đang thiếu cân ";
         }else if (result < 25.0){
-            document.getElementById('result').innerHTML = "Ur BMI is " + result +"Ur body is Normal";
+            document.getElementById('result').innerHTML = "Chỉ số BMI là: " + result +" Bạn bình thường";
         }else if(result < 30.0){
-            document.getElementById('result').innerHTML = "Ur BMI is " + result +"Ur body is Overweight"
+            document.getElementById('result').innerHTML = "Chỉ số BMI là: " + result +" Bạn đang thừa cân";
         }else{
-            document.getElementById('result').innerHTML = "Ur BMI is " + result +"Ur body is Obese"
+            document.getElementById('result').innerHTML = "Chỉ số BMI là: " + result +" Bạn béo phì";
         }
     }
+</script>
 </body>
 </html>
