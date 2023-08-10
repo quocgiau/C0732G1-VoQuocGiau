@@ -14,12 +14,12 @@
         <th></th>
     </tr>
     <tr>
-        <th><input type="text" name="tien" id="Nhaptien" placeholder="Nhập ở đây" size="20"></th>
-        <th><select id="bien1">
+        <th><input type="text" name="tien" id="entermoney" placeholder="Nhập ở đây" size="20"></th>
+        <th><select id="front">
             <option value="USD">USD</option>
             <option value="VND">VND</option>
         </select></th>
-        <th><select id="bien2">
+        <th><select id="behind">
             <option value="VND">VND</option>
             <option value="USD">USD</option>
         </select></th>
@@ -33,16 +33,16 @@
 </table>
 <script>
     function ClickButton() {
-        let front = document.getElementById("bien1").value;
-        let behind = document.getElementById("bien2").value;
-        let nhap = document.getElementById("Nhaptien").value;
+        let front = document.getElementById("front").value;
+        let behind = document.getElementById("behind").value;
+        let enter = document.getElementById("entermoney").value;
         let resutl;
         if (front === "VND" && behind === "USD"){
-            resutl = nhap / 23000;
+            resutl = enter / 23000;
         }else if (front === "USD" && behind === "VND"){
-            resutl = nhap * 23000;
+            resutl = enter * 23000;
         }else {
-            resutl = nhap;
+            resutl = enter;
         }
         document.getElementById("root").innerText = "Result:" + resutl ;
     }

@@ -5,42 +5,42 @@
     <title>may_tinh</title>
 </head>
 <body>
-<input type="text" id="numberone">
-<input type="text" id="numbertwo">
+<input type="text" id="firstNumber">
+<input type="text" id="secondNumber">
 <br>
 <br>
-<button id="button1" onclick="clickbuttoncong()">Cộng ( + )</button>
-<button id="button2" onclick="clickbuttontru()">Trừ ( - )</button>
-<button id="button3" onclick="clickbuttonnhan()">Nhân ( * )</button>
-<button id="button4" onclick="clickbuttonchia()">Chia ( / )</button>
+<button id="button1" onclick="clickbuttonadd()">Cộng ( + )</button>
+<button id="button2" onclick="clickbuttonapart()">Trừ ( - )</button>
+<button id="button3" onclick="clickbuttoncore()">Nhân ( * )</button>
+<button id="button4" onclick="clickbuttondivide()">Chia ( / )</button>
 <br>
 <br>
 <div id="display"></div>
 <script>
-    function clickbuttoncong(){
-        let firstNumber = +document.getElementById("numberone").value;
-        let secondNumber = +document.getElementById("numbertwo").value;
+    function clickbuttonadd(){
+        let firstNumber = +document.getElementById("firstNumber").value;
+        let secondNumber = +document.getElementById("secondNumber").value;
         let resule;
         resule = firstNumber + secondNumber;
         document.getElementById("display").innerHTML = "Result Division:" + resule;
     }
-    function clickbuttontru(){
-        let firstNumber = document.getElementById("numberone").value;
-        let secondNumber = document.getElementById("numbertwo").value;
+    function clickbuttonapart(){
+        let firstNumber = document.getElementById("firstNumber").value;
+        let secondNumber = document.getElementById("secondNumber").value;   
         let resule;
         resule = firstNumber - secondNumber;
         document.getElementById("display").innerHTML = "Result Division:" + resule;
     }
-    function clickbuttonnhan(){
-        let firstNumber = document.getElementById("numberone").value;
-        let secondNumber = document.getElementById("numbertwo").value;
+    function clickbuttoncore(){
+        let firstNumber = document.getElementById("firstNumber").value;
+        let secondNumber = document.getElementById("secondNumber").value;
         let resule;
         resule = firstNumber * secondNumber;
         document.getElementById("display").innerHTML = "Result Division:" + resule;
     }
-    function clickbuttonchia(){
-        let firstNumber = document.getElementById("numberone").value;
-        let secondNumber = document.getElementById("numbertwo").value;
+    function clickbuttondivide(){
+        let firstNumber = document.getElementById("firstNumber").value;
+        let secondNumber = document.getElementById("secondNumber").value;
         let resule;
         resule = firstNumber / secondNumber;
         document.getElementById("display").innerHTML = "Result Division:" + resule;
