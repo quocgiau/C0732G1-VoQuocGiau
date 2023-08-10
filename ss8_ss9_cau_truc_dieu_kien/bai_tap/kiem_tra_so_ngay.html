@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số ngày</title>
+</head>
+<body>
+<h1>Kiểm tra số ngày trong tháng</h1>
+<input id="result" type="number" placeholder="Nhập tháng">
+<button type="button" onclick="clickButton()">Tính số ngày</button>
+<br>
+<br>
+<div id="display">Đây là nơi hiện kết quả</div>
+<script>
+    function clickButton(){
+        let result = document.getElementById("result").value;
+        let display = "";
+        switch (result){
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                display = "Tháng " + result + " có 31 ngày"
+                break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                display = "Tháng " + result + " có 30 ngày"
+                break;
+            case '2':
+                display = "Tháng " + result + " có 28 hoặc 29 ngày"
+                break;
+        }
+        document.getElementById("display").innerHTML = display;
+    }
+</script>
+</body>
+</html>

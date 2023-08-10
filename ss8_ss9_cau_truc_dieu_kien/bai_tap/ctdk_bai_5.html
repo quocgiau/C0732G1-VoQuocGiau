@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let first = +prompt("Điểm bài kiểm tra:");
+    let between = +prompt("Điểm giữa kỳ:");
+    let final = +prompt("Điểm cuối kỳ:");
+    let display = "";
+    display = (first + between*2 + final*2) / 5;
+    if (display >= 8){
+        alert("Học lực loại: Giỏi");
+    }else if (5 < display){
+        alert("Học lực loại: Khá");
+    }else{
+        alert("Học lực loại: Yếu");
+    }
+</script>
+</body>
+</html>

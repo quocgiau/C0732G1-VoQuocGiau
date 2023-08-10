@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhap so hang bac 2: ");
+    let b = +prompt("Nhap so hang bac 1: ");
+    let c = +prompt("Nhap so hang bac 0: ");
+    let display = ( b * b ) - 4 * a * c;
+    if(display < 0){
+        alert("Phương trình vô nghiệm!!");
+    }else if(display == 0){
+        x = (-b) / (2 * a);
+        alert("Phương trình có nghiệm kép: " + x );
+    }else{
+        x1 = ((-b) + Math.sqrt(display)) / (2*a);
+        x2 = ((-b) - Math.sqrt(display)) / (2*a);
+        alert("Phương trình có 2 nghiệm phân biệt: " + x1 +" va " + x2);
+    }
+</script>
+</body>
+</html>

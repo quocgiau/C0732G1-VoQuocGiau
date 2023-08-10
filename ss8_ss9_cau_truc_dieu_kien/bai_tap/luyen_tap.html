@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-$END$
+<script>
+    // while(isNaN(firstNumber) && isNaN(secondNumber)){
+    //     alert("Vui Lòng Nhập 2 Số:")
+    //     var firstNumber = +prompt("NHập Số đầu tiên:")
+    //     var secondNumber = +prompt("Nhập Số Thứ 2:")
+    // }
+    // if(firstNumber % secondNumber == 0){
+    //     document.write("a chia hết cho B")
+    // }else{
+    //     document.write("A ko chia hết cho b")
+    // }
+    while(isNaN(a) || isNaN(b)){
+        var a = +prompt("Nhap so hang bac 1: ");
+        var b = +prompt("Nhap so hang bac 0: ");
+    }
+
+    let x = 0;
+    if(a == 0){
+        if(b == 0){
+            alert("Phuong trinh co vo so nghiem!!")
+        }else{
+            alert("Phuong trinh vo nghiem");
+        }
+    }else{
+        x = (-b) / a;
+        alert("Phuong trinh co nghiem x = " +x);
+    }
+</script>
 </body>
 </html>

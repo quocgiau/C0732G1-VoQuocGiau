@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<script>
+    let send = +prompt("Nhập tiền gửi: ");
+    let interest = +prompt("Nhập lãi (%): ");
+    let year = +prompt("Nhập thời hạn: ");
+    let withdraw;
+
+    if(send < 1 || interest < 0 || interest > 100 || year < 1){
+        alert("Thông tin không hợp lệ ");
+    }else{
+        withdraw = send * Math.pow((1 + ((interest / 100) / 12)), (year * 12));
+        alert("Tiền nhận được " +year +" năm " +" là: " +withdraw + "D");
+    }
+</script>
+</body>
+</html>

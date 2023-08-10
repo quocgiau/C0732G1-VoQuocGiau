@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<body>
+<script>
+    let money = +prompt("Nhap tien luong hang thang: ");
+    let tax = "";
+    if(money <= 6000){
+        tax = money * 0.01;
+    }else{
+        tax = money * 0.05;
+    }
+    alert("Tiền thuế bạn phải trả là: " + tax + "$");
+</script>
+</body>
+</html>
