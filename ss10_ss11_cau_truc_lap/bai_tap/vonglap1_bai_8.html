@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bài 8</title>
+</head>
+<body>
+<button onclick="Random()">Start</button>
+<script>
+    function Random() {
+        let random = prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?: ");
+        let randomNumber = Math.floor(Math.random() * random);
+        let count = 0;
+        do {
+            let number = +prompt("Nhập số bạn đoán: ");
+            if (number === randomNumber) {
+                alert("Bạn đoán đúng");
+                break;
+            } else if (number > randomNumber) {
+                alert("Số bạn đoán lớn hơn.");
+            } else {
+                alert("Số bạn đoán nhỏ hơn.");
+            }
+            count = count + 1;
+            if (count >= 3) {
+                alert("Hết lượt");
+                break;
+            }
+        } while (true);
+    }
+</script>
+</body>
+</html>

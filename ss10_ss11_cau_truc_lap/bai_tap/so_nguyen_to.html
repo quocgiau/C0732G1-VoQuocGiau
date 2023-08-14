@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập n số nguyên tố đầu tiên:")
+    let count = 0;
+    for(i=1; i>0; i++){
+        check(i)
+        if(count === n){
+            break;
+        }
+    }
+    function check(a){
+        let test=0;
+        let i;
+        for(i=2; i<=a/2; i++){
+            if(a%i === 0){
+                test++;
+            }
+        } if(test === 0){
+            document.write(a + "</br>")
+            count ++
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let send = +prompt("Nhập tiền gửi: ");
+    let interest = +prompt("Nhập lãi hàng tháng (%): ");
+    let month = +prompt("Nhập số tháng gửi: ");
+
+    for(let i = 1; i <= month; i++){
+        send += send / 100 * interest;
+        document.write("Tổng tiền sau " + i +" tháng là: " +send + "<br/>");
+    }
+</script>
+</body>
+</html>
