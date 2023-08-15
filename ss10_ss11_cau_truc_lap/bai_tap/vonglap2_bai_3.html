@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Bài 3</title>
 </head>
 <body>
 <script>
+    startriangle1(5);
+    document.write("</br>");
+    startriangle2(5);
+    document.write("</br>");
+    startriangle3(5);
+    document.write("</br>");
+    startriangle4(5);
 
+    function startriangle1() {
+        for (let i = 1; i <= 5; i++) {
+            let row = "" + "</br>";
+            for (let y = 1; y <= i; y++) {
+                row += "*";
+            }
+            document.write(row);
+        }
+    }
+
+    function startriangle2(n) {
+        for (let i = 1; i <= 5; i++) {
+            let row = "" + "</br>";
+            for (let y = n; y >= i; y--) {
+                row += "*";
+            }
+            document.write(row);
+        }
+    }
+
+    function startriangle3(n) {
+        for (let i = 1; i <= n; i++) {
+            var row = "";
+            for (let y = n - 1; y >= i; y--) {
+                row += "&nbsp;&nbsp;";
+            }
+            for (let z = 1; z <= i; z++) {
+                row += "*";
+            }
+            document.write(row + "</br>");
+        }
+    }
+
+    function startriangle4(n) {
+        for (let i = 1; i <= 5; i++) {
+            var row = "";
+            for (let y = 1; y < i; y++) {
+                row += "&nbsp;&nbsp;";
+            }
+            for (let z = i; z <= n; z++) {
+                row += "*";
+            }
+            document.write(row + "</br>");
+        }
+    }
 </script>
 </body>
 </html>
