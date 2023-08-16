@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let Str = prompt("Nhập vào chuỗi: ")
+    let count = 1
+    for (let i = 0; i < Str.length; i++) {
+        if ((Str[i] === " ") && (Str[i + 1] !== " ")) {
+            count = count + 1;
+        }
+    }
+    alert("Số từ trong chuỗi là: " + count)
+</script>
+</body>
+</html>

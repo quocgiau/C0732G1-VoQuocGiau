@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let arr = [5,9,24,36,49,52,66,73,81,15]
+    let max = arr[0];
+    let index = 0;
+    for (let i = 0; i < arr.length; i++) {
+        index = index + arr[i]
+        if (arr[i] >= max) {
+            max = arr[i]
+        }
+    }
+    let everage = index / 10;
+    document.write("Giá trị lơn nhất là: " + max + " Giá tri trung bình là: " + everage )
+</script>
+</body>
+</html>

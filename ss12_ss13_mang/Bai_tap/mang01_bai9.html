@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    let A = new Array(10);
+    let B = new Array(10);
+    let C = [];
+    for (let i = 0; i < A.length; i++) {
+        A[i] = +prompt("Phần tử mảng 1: " + i);
+    }
+    for (let i = 0; i < B.length; i++) {
+        B[i] = +prompt("Phần tử mảng 2: " + i);
+    }
+    alert("Các phần tử của mảng a là = " + A + " và b là = " + B +"<br>");
+    for (let i = 0; i < A.length; i++) {
+        C[i] = B[i];
+        C[i + 10] = A[i];
+    }
+    alert("Mảng C sau khi được nối từ A và B là = " + C);
+</script>
+</body>
+</html>

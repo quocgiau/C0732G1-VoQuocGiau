@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài mảng 1: ");
+    let arr1 = new Array(n);
+    for (let i = 0; i < arr1.length; i++) {
+        arr1[i] = prompt("Nhập phần tử thứ " + i);
+    }
+    let g = +prompt("Nhập độ dài mảng 2: ");
+    let arr2 = new Array(g);
+    for (let i = 0; i < arr2.length; i++) {
+        arr2[i] = prompt("Nhập phần tử thứ " + i);
+    }
+    let check = 0;
+    if (arr1.length === arr2.length) {
+        check = 0;
+    } else {
+        for (let i = 0; i < n.length; i++) {
+            if (arr1[i] !== arr2[i]) {
+                check = 1;
+            } else {
+                check = 0;
+            }
+        }
+    }
+    if (check === 0) {
+        alert("Hai mảng giống nhau");
+    } else if (check === 1){
+        alert("Hai mảng khác nhau");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<h1>Từ điển Anh Việt</h1>
+<p>Nhập từ:  </p>
+<input type="text" id="result" >
+<button onclick="ClickButton()">Dịch</button>
+<br><br>
+<div id="abc"></div>
+<script>
+    function ClickButton() {
+        let result = document.getElementById("result").value.toLowerCase();
+        let EN = ["hello", "good", "apple", "banana"];
+        let VN = ["xinchào", "tốt", "táo", "chuối"];
+        for (let i = 0; i < EN.length; i++) {
+            if (result === EN[i]) {
+                document.getElementById("abc").innerHTML = VN[i];
+                break;
+            } else
+                document.getElementById("abc").innerHTML = "Không tìm thấy";
+        }
+    }
+</script>
+</body>
+</html>

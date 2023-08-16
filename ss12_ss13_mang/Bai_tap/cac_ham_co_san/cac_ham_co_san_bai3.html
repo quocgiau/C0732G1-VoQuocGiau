@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let puh = +prompt("Nhập vào:")
+    let up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let out ='abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+    for (let i = 0; i < puh.length; i++){
+        if (up.indexOf(puh[i]) !== -1){
+            result.push(puh[i].toLowerCase());
+        }else if (out.indexOf(puh[x]) !== -1){
+            result.push(puh[i].toUpperCase());
+        }else
+            result.push(puh[i]);
+    }
+    alert(result.join(''))
+</script>
+</body>
+</html>

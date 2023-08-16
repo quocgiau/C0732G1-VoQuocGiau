@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 1</title>
+</head>
+<body>
+<script>
+    let cor = Array(10);
+    for (let i =0; i < cor.length; i++) {
+         cor[i] = +prompt("Nhập số nguyên: " + i)
+    }
+    let count = 0;
+    let result = '';
+    for (let i = 0; i < cor.length; i++){
+        if (cor[i] >= 10) {
+            count++;
+            result = result + cor[i] + ' '
+        }
+    }
+    document.write(" Có " + count + " số nguyên lớn hơn hoặc bằng 10 đó là: " + result)
+</script>
+</body>
+</html>
