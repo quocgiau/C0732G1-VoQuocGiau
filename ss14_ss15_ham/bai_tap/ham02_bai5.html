@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let one = +prompt('Nhập số thứ nhất')
+    let two = +prompt('Nhập số thứ hai')
+    let three = +prompt('Nhập số thứ ba')
+    function chek(a,b,c){
+        let min
+        if (a <= b) {
+            if (a <= c) {
+                min = a;
+            } else {
+                min = c;
+            }
+        } else if (b >= c) {
+            min = c;
+        } else {
+            min = b;
+        }
+        return min;
+    }
+    document.write("Số bé nhất là: " + chek(one,two,three))
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let a = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let b = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let nameStar = prompt("Nhập tên ngôi sao: ");
+
+    function checkStar(inputStar) {
+        for (let i = 0; i < a.length; i++) {
+            if (inputStar === a[i]) {
+                return b[i];
+            }
+        }
+        return "không tìm thấy sao";
+    }
+
+    document.write(checkStar(nameStar));
+</script>
+</body>
+</html>

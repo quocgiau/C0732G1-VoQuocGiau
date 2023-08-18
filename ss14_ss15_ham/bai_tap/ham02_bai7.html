@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let number1 = +prompt("nhập số thứ nhất ");
+    let number2 = +prompt("nhập số thứ hai ");
+    let temp;
+
+    function convert(a, b) {
+        temp = a;
+        a = b;
+        b = temp;
+        return [a, b]
+    }
+    document.write("Sau khi đổi chỗ là " + convert(number1, number2));
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập số cần tìm giai thừa")
+    let factorial = 1;
+    function count(){
+        for (let i = 1; i <= a; i++) {
+            factorial = factorial * i
+        }
+        return factorial;
+
+    }
+    document.write( a+ "! = " + count(a))
+</script>
+</body>
+</html>
