@@ -8,7 +8,7 @@
 <script>
     let arr = ["a", "b", "c", "d", "e", "f", "a", "b", "h"];
     let input = prompt("nhập kí tự ");
-    function chek(input) {
+    function SearchWord(input) {
         let c = 0
         for (let i = 0; i < arr.length; i++) {
             if (input === arr[i]) {
@@ -20,7 +20,7 @@
             return "-1";
         }
     }
-    document.write("số lần ký tự xuât hiện là " + chek(input))
+    document.write("số lần ký tự xuât hiện là " + SearchWord(input))
 </script>
 </body>
 </html>

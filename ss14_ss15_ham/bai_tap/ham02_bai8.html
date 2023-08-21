@@ -12,8 +12,8 @@
         b[i] = +prompt("Nhập phần tử thứ " + i);
     }
     document.write("Mảng ban đầu là: " + b + "</br>")
-    goibra(b)
-    function goibra(b){
+    reverseArray(b)
+    function reverseArray(b){
         for (let i = 0; i < b.length / 2; i++) {
             let temp = b[i];
             b[i] = b[b.length - 1 - i];
