@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    function Hero(image, top, left, speed, size, gyrate) {
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+        this.speed = speed;
+        this.gyrate = gyrate;
+
+        this.getHeroElement = function () {
+            return '<img width="' + this.size + '"' +
+                ' height="' + this.size + '"' +
+                ' src="' + this.image + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+        }
+
+        this.moveRight = function () {
+            this.left += this.speed;
+            // console.log('ok: ' + this.left);
+        }
+        this.moveDown = function () {
+            this.top += this.speed;
+            // console.log('ok: ' + this.left);
+        }
+        this.moveLeft = function(){
+            this.left -= this.speed;
+            // console.log('ok: ' + this.left);
+        }
+        this.moveTop = function(){
+            this.top -= this.speed;
+            // console.log('ok: ' + this.left);
+        }
+
+    }
+
+    var hero = new Hero('hinhnensoc.jpg', 20, 20, 200, 100, "right");
+
+    function start() {
+        if (hero.gyrate === "right") {
+            if (hero.left < window.innerWidth - hero.size) {
+                hero.moveRight();
+            } else {
+                hero.gyrate = "bottom"
+            }
+        }
+        if (hero.gyrate === "bottom") {
+            if (hero.top < window.innerHeight - hero.size - 100) {
+                hero.moveDown();
+            } else {
+                hero.gyrate = "left"
+            }
+        }
+        if (hero.gyrate === "left") {
+            if (hero.left > 20) {
+                hero.moveLeft()
+            } else {
+                hero.gyrate = "top"
+            }
+        }
+        if (hero.gyrate === "top") {
+            if (hero.top > 20) {
+                hero.moveTop()
+            } else {
+                hero.gyrate = "right"
+            }
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 500)
+    }
+
+    start();
+</script>
+</body>
+</html>

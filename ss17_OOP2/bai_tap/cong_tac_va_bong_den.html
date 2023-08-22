@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        turnOn() {
+            if (!this.status) {
+                console.log("Đèn đã bật")
+            } else {
+                this.status = false
+                console.log(" Đèn đang bật")
+            }
+        }
+
+        turnOff() {
+            if (this.status) {
+                console.log("Đèn đã tắt")
+            } else {
+                this.status = true
+                console.log("Đèn hiện đã tắt")
+            }
+        }
+    }
+
+    class SwitchButton {
+        constructor(lamp, status) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+
+        setStatus(newStatus) {
+            this.status = newStatus
+        }
+
+        connectToLamp(electricLamp) {
+            this.lamp = electricLamp
+            console.log("The switch has been connected to the lamp ")
+        }
+
+        switchOff() {
+            if (this.status === true) {
+                this.lamp.turnOff()
+                console.log('The lamp status is ' + this.lamp.status)
+                this.status = false
+            } else {
+                console.log('The lamp has already off')
+            }
+        }
+
+        switchOn() {
+            if (this.status === false) {
+                this.lamp.turnOn()
+                console.log('The lamp status is ' + this.lamp.status)
+                this.status = true
+            } else {
+                console.log('The lamp has been turn on')
+            }
+        }
+    }
+
+    let electricLamp_1 = new ElectricLamp(false);
+    let switchButton_1 = new SwitchButton();
+    switchButton_1.connectToLamp(electricLamp_1)
+    switchButton_1.setStatus(false)
+    for (let i = 0; i < 10; i++) {
+        switchButton_1.switchOn()
+        switchButton_1.switchOff()
+    }
+</script>
+</body>
+</html>
