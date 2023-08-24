@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu gọi đồ uống</title>
+</head>
+<body>
+        <h1>Menu</h1>
+        <p>1. Cafe - 10000 VNĐ</p>
+        <p>2. Cam vắt - 15000 VNĐ</p>
+        <p>3. Nước ép cà rốt - 15000 VNĐ</p>
+        <p>4. Nước ép cà chua - 12000 VNĐ</p>
+        <p>5. Nước lọc - 5000 VNĐ</p>
+        <p>6. Nước dừa - 15000 VNĐ</p>
+        <button onclick="oder()">Oder</button>
+
+
+<script>
+    function oder() {
+        let number = [1, 2, 3, 4, 5, 6];
+        let money = [10000, 15000, 15000, 12000, 5000, 15000];
+        let numberOf = 0;
+        let drink;
+        let sum = 0;
+        let sumAll = 0;
+        do {
+            drink = +prompt("Nhập số để có thẻ oder nước");
+            for (let i = 0; i < number.length; i++) {
+                if (drink === number[i]) {
+                    numberOf = +prompt("Bạn muốn mua mấy ly");
+                    sum = money[i] * numberOf;
+                    alert("Tiền bạn cần phải trả là: " + sum + "k ")
+                    sumAll += sum;
+                }
+            }
+            if (drink === 7) {
+                let x = confirm("Bạn không muốn gọi nước?");
+                if (x === true) {
+                    alert("Tổng tền bạn cần phải thanh toán là " + sumAll + "k");
+                    break;
+                } else {
+                    continue;
+                }
+            }
+            if (drink > 7 || drink < 1 || isNaN(drink) === true) {
+                alert("Vui lòng nhập số trong menu");
+            }
+        } while (true)
+    }
+</script>
+</body>
+</html>

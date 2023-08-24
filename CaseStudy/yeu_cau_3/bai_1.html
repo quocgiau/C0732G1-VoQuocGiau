@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prefix sums</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập vào chiều dài mảng")
+    let arr1 = [];
+    let arr2 = [];
+    for (let i = 0; i < n; i++) {
+        arr1[i] = +prompt('Nhap vao phan tu so Nguyen ' + (i + 1))
+    }
+
+    function PrefixSums(a) {
+        let sum = 0;
+        for (i = 0; i < arr1.length; i++) {
+            sum += arr1[i];
+            a.push(sum);
+        }
+        return a;
+    }
+
+    alert("Mảng ban đầu là : " + arr1);
+    alert("Prefix Sums của arr1 là: " + PrefixSums(arr2));
+</script>
+</body>
+</html>
