@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Tính tổng</title>
 </head>
 <body>
-$END$
+<script>
+    let m = +prompt('Mhập hàng:')
+    let n = +prompt('Mhập cột:')
+    let arr = new Array(m)
+    for (let m = 0; m < arr.length; m++) {
+        arr[m] = new Array(n)
+        for (let n = 0; n < arr[m].length; n++) {
+            arr[m][n] = +prompt("Nhập phần tử ở vị trí [" + m + "][" + n + "]:");
+        }
+    }
+    document.write('Mảng 2d vừa tạo là: ' + '</br>')
+    for (m = 0; m < arr.length; m++) {
+        for (n = 0; n < arr[m].length; n++) {
+            document.write(arr[m][n] + '&nbsp;')
+        }
+        document.write('</br>')
+    }
+    let sum = 0
+    for (let m = 0; m < arr.length; m++) {
+        for (let n = 0; n < arr[m].length; n++) {
+            if (arr[m][n] % 2 === 0) {
+                sum = sum + arr[m][n]
+            }
+        }
+    }
+    document.write("Tổng các số chẵn là: " + sum)
+</script>
 </body>
 </html>
