@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ký tự chung</title>
+</head>
+<body>
+<script>
+    let str1 = prompt('Nhập chuỗi ký tự 1: ')
+    let str2 = prompt('Nhập chuỗi ký tự 2: ')
+
+    function commonCharacterCount(a, b) {
+        let arr1 = a.split('');
+        let arr2 = b.split('');
+        let commonArr = [];
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr1[i] === arr2[j]) {
+                    commonArr.push(arr2[j])
+                    arr2.splice(j, 1)
+                }
+            }
+        }
+        return commonArr
+    }
+
+    alert('Có ' + commonCharacterCount(str1, str2).length + ' ký tự chung đó là: ' + commonCharacterCount(str1, str2))
+</script>
+</body>
+</html>

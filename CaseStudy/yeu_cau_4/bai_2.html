@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ký tự khác nhau</title>
 </head>
 <body>
+<script>
+    let myStr = prompt("Nhập ký tự")
+    let differentSymbolsNaive = myStr.split('')
 
+    for (let i = 0; i < differentSymbolsNaive.length; i++) {
+        for (let j = i + 1; j < differentSymbolsNaive.length; j++) {
+            if (differentSymbolsNaive[i] === differentSymbolsNaive[j]) {
+                differentSymbolsNaive.splice(i, 1)
+                i--
+            }
+        }
+    }
+    // let differentSymbol = differentSymbolArr.join(',')
+    alert('có ' + differentSymbolsNaive.length + ' ký tự khác nhau là: ' + differentSymbolsNaive)
+</script>
 </body>
 </html>
