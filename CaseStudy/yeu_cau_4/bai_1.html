@@ -7,12 +7,11 @@
 <body>
 <script>
     function text() {
-        let myString1 = prompt('Nhập vào')
-        document.write("Chuỗi ký tự trước khi chuẩn hoá là: " + myString1 + '</br>')
-        document.write('Chuỗi ký tự sau khi chuẩn hoá là: ' + correct(myString1) + '</br>')
+        let myString = prompt('Nhập vào')
 
-        function correct(myString) {
-            let myArr = myString.split('')
+        function correct(a) {
+            let myArr = a.split('')
+            let String = '' ;
             while (myArr[0] === ' ') {
                 myArr.shift()
             }
@@ -25,7 +24,6 @@
                     i--
                 }
             }
-            console.log(myArr)
             myArr[0] = myArr[0].toLocaleUpperCase()
             for (let j = 0; j < myArr.length - 1; j++) {
                 if (myArr[j] === ' ') {
@@ -34,22 +32,24 @@
                     myArr[j + 1] = myArr[j + 1].toLocaleLowerCase()
                 }
             }
-            let correctString = myArr.join('')
-            return correctString
+             String = myArr.join('')
+            return String
         }
-
-        function findMaxWord(myString) {
-            let maxLength = 0;
-            let index
-            let words = myString.split(' ');
+        document.write("Chuỗi ký tự nhập vào: " + myString + '</br>')
+        document.write('Chuỗi ký tự sau khi chuẩn hoá là: ' + correct(myString) + '</br>')
+        function longestWord(b) {
+            let max = 0;
+            let index = 0;
+            let words = b.split(' ');
             for (let i = 0; i < words.length; i++) {
-                if (words[i].length > maxLength) {
-                    maxLength = words[i].length
+                if (words[i].length > max) {
+                    max = words[i].length
                     index = i
                 }
             }
             return words[index]
         }
+        document.write('Từ dài nhất là: ' + longestWord(correct(myString)))
     }
 
     text()
