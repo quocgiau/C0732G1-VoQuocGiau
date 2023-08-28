@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống quản lý hoạc viên</title>
+</head>
+<body>
+<h1>CHƯƠNG TRÌNH QUẢN LÝ HỌC VIÊN </h1>
+<div id="display"></div>
+<br>
+<br>
+<button onclick="addNewStudent(studentList)">Thêm mới</button>
+<button onclick="editStudent(studentList)">Sửa thông tin học viên</button>
+<button onclick="deleteStudent(studentList)">Xoá học viên</button>
+
+<script>
+    class Student {
+        constructor(ID, name, className, email, birthDay, module) {
+            this.ID = ID;
+            this.name = name;
+            this.className = className;
+            this.email = email;
+            this.birthDay = birthDay;
+            this.module = module;
+        }
+    }
+
+    let student1 = new Student('1111', 'Võ Quốc A', 'C0723G1', 'giau@gmail.com', '06/12/2001', 1);
+    let student2 = new Student('2222', 'Võ Quốc B', 'C0723G1', 'giau@gmail.com', '01/06/2001', 3);
+    let student3 = new Student('3333', 'Võ Quốc C', 'C0723G1', 'giau@gmail.com', '30/08/2001', 6);
+    let studentList = [student1, student2, student3]
+    let table
+
+    function display(arr) {
+        table = `<table border='1px' cellpadding='10px' cellspacing='0px'>
+         <tr>
+            <th>Mã học viên</th>
+            <th>Tên</th>
+            <th>Lớp</th>
+            <th>Email</th>
+            <th>Ngày sinh</th>
+            <th>Module</th>
+           </tr>`
+        for (let i = 0; i < arr.length; i++) {
+            table += `<tr>
+            <td>` + 'HV-' + arr[i].ID + `</td>
+            <td>` + arr[i].name + `</td>
+            <td>` + arr[i].className + `</td>
+            <td>` + arr[i].email + `</td>
+            <td>` + arr[i].birthDay + `</td>
+            <td>` + arr[i].module + `</td>
+            </tr>`
+        }
+        table += `</table>`
+        document.getElementById('display').innerHTML = table
+    }
+
+    function addNewStudent(arr) {
+        checkId(Student, arr);
+        checkName(Student);
+        Student.className = prompt('Hãy nhập lớp');
+        Student.email = prompt('Hãy nhập Email');
+        checkBirthday(Student);
+        checkModule(Student)
+        const confirmAdd = confirm('Bạn có có chắc muốn thêm sinh viên này?')
+        if (confirmAdd === true) {
+            arr.push(Student)
+            display(arr)
+        }
+    }
+
+    function editStudent(arr) {
+        let editId = prompt('Nhập ID sinh viên cần sửa')
+        let check = 0;
+        let index
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j].ID === editId) {
+                check = 1
+                index = j
+                break;
+            }
+        }
+        if (check === 1) {
+            arr[index].name = prompt('Hãy sửa tên học viên')
+            arr[index].className = prompt('Hãy sửa lớp')
+            arr[index].email = prompt('Hãy email')
+            arr[index].birthDay = prompt('Hãy nhập ngày sinh')
+            arr[index].module = prompt('Hãy sửa module')
+            display(arr)
+        } else {
+            alert('Mã sinh viên bạn nhập không đúng')
+        }
+    }
+
+    function deleteStudent(arr) {
+        let delId = prompt('Hãy nhập vào chính xác ID của sinh viên bạn cần xoá')
+        let check = 0
+        let index
+        for (let y = 0; y < arr.length; y++) {
+            if (arr[y].ID === delId) {
+                const confirmDel = confirm('Bạn có muốn xoá học viên ' + arr[row].name)
+                if (confirmDel === true) {
+                    index = y
+                    check = 1
+                    break;
+                }
+            }
+        }
+        if (check === 1) {
+            arr.splice(index, 1)
+            display(arr)
+        } else {
+            alert('Mã học viên bạn nhập không đúng')
+        }
+    }
+
+    function checkId(student, arr) {
+        let id = prompt('Hãy nhập mã học viên')
+        let check = 0;
+        for (let row = 0; row < arr.length; row++) {
+            if (arr[row].ID === id) {
+                check++;
+            }
+        }
+        if (check !== 0 || id === '' || id.length !== 4) {
+            alert('ID học viên đã tồn tại vui lòng nhập lại ')
+            return checkId(student, arr)
+        } else if (id[0] % 1 !== 0 || id[1] % 1 !== 0 || id[2] % 1 !== 0 || id[3] % 1 !== 0) {
+            alert('ID học viên phải là số')
+            return checkId(student, arr)
+        } else {
+            return student.ID = id
+        }
+    }
+
+    function checkName(student) {
+        let name = prompt('Hãy nhập họ và tên học viên')
+        if (name.length <= 50 && name !== '') {
+            return student.name = name
+        } else {
+            alert('Họ và tên không được lớn hơn 50 ký tự')
+            return checkName(student)
+        }
+    }
+
+    function checkBirthday(student) {
+        let birthDay = prompt('Hãy nhập ngày tháng năm sinh')
+        let correctFormat = birthDay.split("/");
+        if (correctFormat[0] <= 31 && correctFormat[1] <= 12 && correctFormat[2] <= 9999 && correctFormat[2] >= 1000) {
+            return student.birthDay = birthDay
+
+        } else {
+            alert('Ngày tháng năm sinh phải theo định dạng dd/mm/yyyy')
+            return checkBirthday(student)
+        }
+    }
+
+    function checkModule(student) {
+        let module = prompt('Hãy nhập module')
+        if (module > 6 || module < 1 || module % 1 !== 0 || module === '') {
+            alert('module phải là số nguyên từ 1 tới 6')
+            return checkModule(student)
+        } else {
+            return student.module = module
+        }
+    }
+
+
+    display(studentList);
+</script>
+</body>
+</html>
